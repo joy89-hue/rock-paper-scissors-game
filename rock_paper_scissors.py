@@ -28,7 +28,7 @@ scissors = '''
 ---.__(___)
 '''
 # Game setup
-player = int(input("What do yiu choose? Type 0 for lrock, 1 for paper and 2 for scissors: "))
+player = int(input("What do you choose? Type 0 for rock, 1 for paper and 2 for scissors: "))
 
 if player == 0:
   print(f"Player choose: {rock}")
