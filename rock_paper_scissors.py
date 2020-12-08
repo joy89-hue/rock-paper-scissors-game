@@ -35,34 +35,28 @@ Scissors win against paper.
 Paper wins against rock.
 """
 game_image = [rock, paper, scissors]
-user_choice = int(input("What do you choose? Type 0 for rock, 1 for paper and 2 for scissors: "))
+user_choice = int(input("What do you choose? Type 0 for rock, 1 for paper and 2 for scissors:\n"))
 
-if user_choice in [0, 1, 2]:
-  print("You choose:\n")
-  print(game_image[user_choice])
+if user_choice > 2 or user_choice < 0:
+  print("You chose an ivalid nunber. You lose!")
 
-  computer_choice = randint(0, 2)
-  print("Computer choose:\n")
-  print(game_image[computer_choice])
+else:
+  print("You choose:")
+  print(game_images[user_choice])
+
+  computer_choice = random.randint(0, 2)
+  print("Computer choose:")
+  print(game_images[computer_choice])
 
   if user_choice == computer_choice:
-    print("Its a tie")
+    print("It's a tie!")
+  elif  user_choice == 0 and computer_choice == 2:
+    print('You win!')
+  elif computer_choice == 0 and user_choice == 2:
+    print("You lose!")
+  elif user_choice > computer_choice:
+    print("You win!")
   else:
-    if user_choice == 0:
-      if computer_choice == 1:
-        print("You lose..")
-      else:
-        print("You win!")
+    print("You lose!")
 
-    elif user_choice == 1:
-      if computer_choice == 2:
-        print("You lose..")
-      else:
-        print("You win!")
-    elif user_choice == 2:
-      if computer_choice == 1:
-        print("You win!")
-      else:
-        print("You lose..")  
-else:
-  print("You typed invalid literal. You lose!")
+
